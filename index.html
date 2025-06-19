@@ -2,16 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My To-Do List</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Josha Lynn Worth</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-  <h1>📝 Joshalynn's Personal Vault</h1>
-  <input type="text" id="taskInput" placeholder="Add a new task..." />
-  <button onclick="addTask()">Add</button>
+<body onclick="scrollToAbout()">
+  <section id="home">
+    <h1>Josha Lynn Worth</h1>
+    <p class="hint">Click anywhere to continue</p>
+  </section>
 
-  <ul id="taskList"></ul>
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I’m a Computer Science student at the University of Missouri–Kansas City, pursuing my Bachelor of Science with a minor in Mathematics.  
+      I’m passionate about full-stack development and enjoy building complete, functional applications from the ground up. 🌸</p>
+  </section>
 
   <script src="script.js"></script>
 </body>

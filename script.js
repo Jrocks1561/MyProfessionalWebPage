@@ -1,11 +1,6 @@
-function addTask() {
-  const input = document.getElementById("taskInput");
-  const taskText = input.value.trim();
-  if (taskText === "") return;
-
-  const li = document.createElement("li");
-  li.textContent = taskText;
-  li.onclick = () => li.remove(); // click to remove task
-  document.getElementById("taskList").appendChild(li);
-  input.value = "";
+function scrollToAbout() {
+  const about = document.getElementById("about");
+  const yOffset = -40; // adjust this negative offset as needed
+  const y = about.getBoundingClientRect().top + window.pageYOffset + yOffset;
+  window.scrollTo({ top: y, behavior: 'smooth' });
 }
