@@ -1,33 +1,14 @@
-/* Entire page background with gradient animation */
-body {
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(-45deg, #41014ee1, #8b20e2e3, #461f81, #fa2fdfda);
-  background-size: 400% 400%;
-  animation: gradientBG 20s ease infinite;
-  color: #f0f0ff;
-}
-
-/* Animate background gradient */
-@keyframes gradientBG {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-/* Sections with frosted glass effect */
+/* Frosted glass effect on sections */
 section {
-  background: hsl(60, 33%, 99%);
-  backdrop-filter: blur(25px);
-  -webkit-backdrop-filter: blur(25px);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border-radius: 16px;
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.7);
   padding: 3rem;
   margin: 6rem auto;
   max-width: 700px;
   min-height: 70vh;
-  color: #000000;
+  color: #222;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -35,80 +16,54 @@ section {
   align-items: center;
   cursor: default;
 }
-
-/* Make #home clickable */
-#home {
-  cursor: pointer;
-}
-
-/* Headings */
-#home h1 {
-  font-size: 3.5rem;
-  margin-bottom: 1rem;
-}
-
-.hint {
-  font-size: 1.2rem;
-  opacity: 0.8;
-  font-style: italic;
-  margin-top: 0;
-}
-
-#about h2,
-#projects h2 {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-}
-
-#about p {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-#projects {
-  text-align: left;
-}
-
-.project {
-  margin-bottom: 2rem;
-  padding-left: 1rem;
-  box-sizing: border-box;
-}
-
-.project h3 {
-  margin: 0 0 0.3rem 0;
-  line-height: 1.2;
-}
-
-.project h3 a {
-  color: #222;
-  text-decoration: none;
-}
-
-.project h3 a:hover {
-  color: #555;
-  text-decoration: underline;
-}
-
-.project p {
+body {
   margin: 0;
-  line-height: 1.4;
-  font-size: 1rem;
-/* Blur background behind project cards for readability */
-.project {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border-radius: 12px;
-  box-shadow: 0 4px 16px 0 rgba(0,0,0,0.15);
-  padding: 1.5rem;
-  margin-bottom: 2rem;
-  color: #222;
-  background: #fff;
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-  background-image: none;
-  animation: none;
+  padding: 0;
+  min-height: 100vh;
+  font-family: 'Bubblegum Sans', cursive;
+  background-color: #4b0082; /* starting dark purple */
+  background-size: 400% 400%;
+  animation: fadeColors 15s infinite alternate;
+  color: #f0f0ff;
+}
+
+/* Animate background color */
+@keyframes fadeColors {
+  0%   { background-color: #8b2fcc; }  /* dark purple */
+  25%  { background-color: #9b59b6; }  /* light purple */
+  50%  { background-color: #610734; }  /* pink */
+  75%  { background-color: #3b5998; }  /* blue */
+  100% { background-color: #a43dee; }  /* back to dark purple */
+}
+/* General translucent white background for all sections by default */
+section {
+  background: rgba(141, 6, 204, 0);
+}
+
+/* Home section - subtle mint tint */
+#home {
+  font-family: 'Bubblegum Sans', cursive;
+  background: rgb(196, 150, 207);
+  color: #0000009f;
+}
+
+/* About section - soft lavender tint */
+#about {
+  font-family: 'Bubblegum Sans', cursive;
+  background: rgba(241, 157, 209, 0.527);
+  color: #000000;
+}
+
+/* Projects section - light pink tint */
+#projects {
+  font-family: 'Bubblegum Sans', cursive;
+  background: rgba(153, 162, 240, 0.753);
+  color: #000000;
+}
+
+/* Contact section - pale blue tint */
+#contact {
+  font-family: 'Bubblegum Sans', cursive;
+  background: rgba(203, 151, 238, 0.76);
+  color: #000203a6;
 }
