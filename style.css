@@ -1,65 +1,52 @@
-/* 🌈 Entire page background with animated gradient */
+/* Entire page background with gradient animation */
 body {
   margin: 0;
   padding: 0;
-  min-height: 100vh; /* use min-height instead of fixed height for flexibility */
+  min-height: 100vh;
   font-family: 'Poppins', sans-serif;
-  color: #222; /* readable dark text */
-  background: linear-gradient(-45deg, #d3a0b3, #b8a1c9, #8f87bb, #c2b4db);
+  background: linear-gradient(-45deg, #41014ee1, #8b20e2e3, #461f81, #fa2fdfda);
   background-size: 400% 400%;
-  animation: gradient 30s ease infinite;
-  text-align: center;
-  overflow-x: hidden;
+  animation: gradientBG 20s ease infinite;
+  color: #f0f0ff;
 }
 
-#home, #about {
-  cursor: pointer;
+/* Animate background gradient */
+@keyframes gradientBG {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
-
-/* 🔁 Smooth scroll effect */
-html {
-  scroll-behavior: smooth;
-}
-
-/* 🎥 Gradient animation keyframes */
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-/* 📐 Full-screen section base styles */
+/* Sections with frosted glass effect */
 section {
-  min-height: 100vh; /* min-height for better mobile support */
+  background: hsl(60, 33%, 99%);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.7);
+  padding: 3rem;
+  margin: 6rem auto;
+  max-width: 700px;
+  min-height: 70vh;
+  color: #000000;
+  text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
-  box-sizing: border-box;
-  margin: 2rem auto; /* add vertical spacing between sections */
-  max-width: 900px;
-  background-color: rgba(255, 255, 255, 0.15);
-  border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-  color: #222;
-  text-align: center; /* consistent centering */
+  cursor: default;
 }
 
-/* 🏠 Home title */
-#home h1 {
-  font-size: 3.5rem;
-  margin-bottom: 1rem;
+/* Make #home clickable */
+#home {
   cursor: pointer;
 }
 
-/* ✨ Instruction text */
+/* Headings */
+#home h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
 .hint {
   font-size: 1.2rem;
   opacity: 0.8;
@@ -67,8 +54,8 @@ section {
   margin-top: 0;
 }
 
-/* 👤 About section */
-#about h2 {
+#about h2,
+#projects h2 {
   font-size: 2.5rem;
   margin-bottom: 2rem;
 }
@@ -78,7 +65,6 @@ section {
   line-height: 1.6;
   max-width: 800px;
   margin: 0 auto;
-  font-family: 'Poppins', sans-serif;
 }
 
 #projects {
@@ -87,28 +73,42 @@ section {
 
 .project {
   margin-bottom: 2rem;
-  padding-left: 1rem;      /* add some left padding for alignment */
-  box-sizing: border-box;  /* ensure padding included in width */
+  padding-left: 1rem;
+  box-sizing: border-box;
 }
 
 .project h3 {
-  margin: 0 0 0.3rem 0;    /* consistent margin below heading */
-  line-height: 1.2;        /* tighter line height to reduce vertical space */
+  margin: 0 0 0.3rem 0;
+  line-height: 1.2;
 }
 
 .project h3 a {
-  color: #8f87bb;
+  color: #222;
   text-decoration: none;
-  display: inline-block;   /* make link a block for consistent spacing */
 }
 
 .project h3 a:hover {
-  color: #d3a0b3;
+  color: #555;
   text-decoration: underline;
 }
 
 .project p {
-  margin: 0;               /* remove default paragraph margin */
+  margin: 0;
   line-height: 1.4;
   font-size: 1rem;
+/* Blur background behind project cards for readability */
+.project {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 12px;
+  box-shadow: 0 4px 16px 0 rgba(0,0,0,0.15);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  color: #222;
+  background: #fff;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  background-image: none;
+  animation: none;
 }
