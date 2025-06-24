@@ -1,13 +1,13 @@
-/* Frosted glass effect on sections */
 section {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-radius: 16px;
+  border-radius: 24px;
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.7);
-  padding: 3rem;
-  margin: 6rem auto;
-  max-width: 700px;
-  min-height: 70vh;
+  padding: 3rem 2rem;
+  margin: 2.5vh auto;         /* Top/bottom margin for spacing */
+  width: 92vw;                /* Almost full width */
+  max-width: 1200px;          /* Optional: limit on very large screens */
+  min-height: 85vh;           /* Almost full height */
   color: #222;
   text-align: center;
   display: flex;
@@ -15,7 +15,75 @@ section {
   justify-content: center;
   align-items: center;
   cursor: default;
+  background: rgba(141, 6, 204, 0); /* Or keep your per-section backgrounds */
 }
+.top-nav {
+  width: 100%;
+  background: rgba(50, 10, 80, 0.85);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem 0;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+}
+
+.top-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  transition: color 0.2s;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+}
+
+.top-nav a:hover,
+.top-nav a:focus {
+  background: #ab59b6;
+  color: #fff;
+}
+.branding {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align children to the left */
+  justify-content: center;
+  min-height: 180px;
+  padding-left: 10px;      /* Optional: add space from the edge */
+  border: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+.cloud-image {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 380px;         /* Increased width */
+  opacity: 0.90;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.branding h1 {
+  color: #ab59b6;
+  margin: 0;
+  padding: 0 40px;      /* More horizontal padding */
+  max-width: 320px;     /* Prevents text from overflowing cloud */
+  white-space: nowrap;  /* Keeps text on one line */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-shadow:
+    -2px -2px 0 #000000,  
+     2px -2px 0 #000000,
+    -2px  2px 0 #000000,
+     2px  2px 0 #000000;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -25,13 +93,14 @@ body {
   background-size: 400% 400%;
   animation: fadeColors 15s infinite alternate;
   color: #f0f0ff;
+  padding-top: 90px; /* Prevent content from hiding under nav */
 }
 
 /* Animate background color */
 @keyframes fadeColors {
   0%   { background-color: #8b2fcc; }  /* dark purple */
   25%  { background-color: #9b59b6; }  /* light purple */
-  50%  { background-color: #610734; }  /* pink */
+  50%  { background-color: #be4f87; }  /* pink */
   75%  { background-color: #3b5998; }  /* blue */
   100% { background-color: #a43dee; }  /* back to dark purple */
 }
