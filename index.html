@@ -19,9 +19,56 @@
     <h1>JoshaLynn Worth</h1>
   </div>
   <section id="home">
-    <h1>Home</h1>  
-    <p>Welcome to my professional Portfolio</p>
-  </section>
+  <h1>Welcome to My<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Project Portfolio 🌸</h1>
+  <p>Where creativity shapes the future.</p>
+
+  <!-- Game Container -->
+  <div id="game-area">
+  <div id="mouse-container">
+    <img id="mouse" src="images/mouse.png" alt="Mouse" />
+  </div>
+  <img id="cheese" src="images/cheese.png" alt="Cheese" />
+</div>
+</section>
+<script>
+const mouse = document.getElementById('mouse');
+let isJumping = false;
+let velocity = 0;
+let position = 0; // vertical position in px (0 = ground)
+const gravity = 1.5; // gravity strength
+const jumpStrength = 22; // how high the jump is
+const ground = 0; // ground position
+
+function updateMousePosition() {
+  mouse.style.position = 'relative';
+  mouse.style.bottom = position + 'px';
+}
+
+function gameLoop() {
+  if (isJumping) {
+    velocity -= gravity;
+    position += velocity;
+    if (position <= ground) {
+      position = ground;
+      isJumping = false;
+      velocity = 0;
+    }
+    updateMousePosition();
+  }
+  requestAnimationFrame(gameLoop);
+}
+
+document.addEventListener('keydown', function(e) {
+  if ((e.code === 'Space' || e.key === ' ') && !isJumping) {
+    e.preventDefault();
+    isJumping = true;
+    velocity = jumpStrength;
+  }
+});
+
+gameLoop();
+</script>
 
   <section id="about">
     <h2>About Me</h2>
